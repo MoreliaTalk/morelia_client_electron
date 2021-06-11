@@ -1,0 +1,19 @@
+{
+  "name": "morelia_client_electron",
+  "version": "0.0.1",
+  "description": "MoreliaTalk Client written on Electron",
+  "main": "./src/main.js",
+  "repository": "https://github.com/MoreliaTalk/morelia_client_electron.git",
+  "author": "NekrodNIK <60639354+NekrodNIK@users.noreply.github.com>",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "@electron/remote": "^1.1.0",
+    "custom-electron-titlebar": "^3.2.7"
+  },
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^13.1.2"
+  }
+}
