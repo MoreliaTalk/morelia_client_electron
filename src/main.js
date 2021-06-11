@@ -12,7 +12,7 @@ function createWindow() {
         }
     })
 
-    win.loadFile("src/render/index.html")
+    win.loadFile("src/render/dist/index.html")
     win.once("ready-to-show", () => {
         win.show()
     })
