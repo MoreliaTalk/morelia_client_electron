@@ -13,7 +13,9 @@
     "react-dom": "^17.0.2"
   },
   "scripts": {
-    "start": "webpack --mode development && electron ."
+    "start": "webpack --mode development && electron .",
+    "dev": "webpack --mode development --watch",
+    "start_no_pack": "electron ."
   },
   "devDependencies": {
     "@babel/core": "^7.14.5",
