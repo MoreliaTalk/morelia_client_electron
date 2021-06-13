@@ -1,4 +1,19 @@
 h1 {
     color: #27aedb;
     text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+#root{
+    position: absolute;
+    top: -21px;
+    display: grid;  
+    grid-template-rows: 5fr 1fr;
+    height: calc(21px + 100%);
+    width: 100%;
 }

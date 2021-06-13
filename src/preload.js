@@ -1,7 +1,8 @@
 const { Titlebar, Color } = require("custom-electron-titlebar")
 
 window.addEventListener("DOMContentLoaded", () => {
-    new Titlebar({
-        backgroundColor: Color.fromHex("#FFFFFF")
+    var title_bar = new Titlebar({
+        backgroundColor: Color.fromHex("red")
     })
+    title_bar.updateMenuPosition("left")
 })
