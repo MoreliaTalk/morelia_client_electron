@@ -1,10 +1,3 @@
-h1 {
-    color: #27aedb;
-    text-align: center;
-    width: 100%;
-    height: 100%;
-}
-
 body {
     margin: 0;
 }
@@ -13,7 +6,32 @@ body {
     position: absolute;
     top: -21px;
     display: grid;  
-    grid-template-rows: 5fr 1fr;
+    grid-template-rows: 1fr 76px;
     height: calc(21px + 100%);
     width: 100%;
+    overflow: hidden;
+    background-color: #161616;
+}
+
+#forma_input{
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    background-color: #161616;
+}
+
+#text_input_container{
+    margin: 10px;
+}
+
+#button_send{
+    background-color:#00ff00;
+    color: #161616;
+    margin: 10px;
+    margin-left: 0px;
+    border-radius: 10px;
+    height: 56px;
+}
+
+#MessageGrid{
+    display: grid;
 }
