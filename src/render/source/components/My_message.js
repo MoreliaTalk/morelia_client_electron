@@ -1,9 +1,15 @@
 import React, { Component } from "react";
+import Svg from "../svg/my_mes.svg"
 
 class My_message extends Component{
     render(){
+        const add_border_image = {
+            borderImageSource: "url("+Svg+")"
+        }
         return (
-            <h1>Hello!</h1>
+            <div className="mes mes_user" style={add_border_image}>
+                <p>Hello \/\/ORLDdggggggggggggggggg!</p>
+            </div>
         )
     }
 }
