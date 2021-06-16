@@ -7,9 +7,9 @@ class My_message extends Component{
     }
     render(){
         return (
-            <div style={{position: "relative"}}><div className="mes_user">
+            <div className="mes_user">
                 <span className="text_mes_user" dangerouslySetInnerHTML={{__html: this.text}}></span>
-            </div></div>
+            </div>
         )
     }
 }

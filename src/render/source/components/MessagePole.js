@@ -5,10 +5,10 @@ class MessagePole extends Component{
     constructor(props){
         super(props)
     }
+
     render(){
         return (
             <div id="MessageGrid">
-                <My_message text="ddfssssssssssss"/>
                 <My_message text="ddfssssssssssss"/>
             </div>
         )
