@@ -8,10 +8,8 @@ class MessagePole extends Component{
     render(){
         return (
             <div id="MessageGrid">
-                <div></div>
-                <div></div>
-                <div></div>
-                <My_message/>
+                <My_message text="ddfssssssssssss"/>
+                <My_message text="ddfssssssssssss"/>
             </div>
         )
     }

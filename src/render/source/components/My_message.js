@@ -1,15 +1,15 @@
 import React, { Component } from "react";
-import Svg from "../svg/my_mes.svg"
 
 class My_message extends Component{
+    constructor(props){
+        super(props)
+        this.text = this.props.text.replace(/\\n/g, "<br />");  
+    }
     render(){
-        const add_border_image = {
-            borderImageSource: "url("+Svg+")"
-        }
         return (
-            <div className="mes mes_user" style={add_border_image}>
-                <p>Hello \/\/ORLDdggggggggggggggggg!</p>
-            </div>
+            <div style={{position: "relative"}}><div className="mes_user">
+                <span className="text_mes_user" dangerouslySetInnerHTML={{__html: this.text}}></span>
+            </div></div>
         )
     }
 }
