@@ -49,4 +49,5 @@ body {
     margin-left: auto;
     margin-top: 3px;
     margin-right: 10px;
+    white-space: pre-wrap;
 }

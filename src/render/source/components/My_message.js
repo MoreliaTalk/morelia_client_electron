@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class My_message extends Component{
     constructor(props){
         super(props)
-        this.text = this.props.text.replace(/\\n/g, "<br />");  
+        this.text = this.props.text 
     }
     render(){
         return (
