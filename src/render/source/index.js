@@ -26,7 +26,7 @@ class Main extends Component{
             massiv_mes: [
             {
                 type: "my",
-                text: "murmur)))"
+                text: "Hello_World)))"
             }]
         }
 

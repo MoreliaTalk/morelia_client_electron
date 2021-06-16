@@ -12,7 +12,7 @@ class MessagePole extends Component{
 
         this.massiv_mes = []
         for (var i = 0; i < arr.length; i++) {
-            this.massiv_mes.push(<My_message text="ddd" key={i} text={arr[i].text}/>)
+            this.massiv_mes.push(<My_message key={i} text={arr[i].text}/>)
         }
         
         return (
