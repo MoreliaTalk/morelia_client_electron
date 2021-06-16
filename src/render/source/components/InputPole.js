@@ -5,6 +5,11 @@ class InputPole extends Component {
     constructor(props){
         super(props)
         this.state = {add_height: 19}
+        this.send = this.send.bind(this);
+    }
+
+    send(){
+        this.props.send_method("my", document.getElementById("text_input").value)
     }
 
     componentDidMount() {
@@ -34,7 +39,7 @@ class InputPole extends Component {
                         <TextField id="text_input" multiline={true} fullWidth={true} label="Введите текст сообщения:" 
                         color="primary"/>
                     </div>
-                    <Button id="button_send">Отправить</Button>
+                    <Button id="button_send" onClick={this.send}>Отправить</Button>
                 </form>
         );
     }

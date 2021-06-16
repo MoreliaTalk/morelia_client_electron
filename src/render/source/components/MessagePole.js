@@ -7,9 +7,17 @@ class MessagePole extends Component{
     }
 
     render(){
+
+        var arr = this.props.data
+
+        this.massiv_mes = []
+        for (var i = 0; i < arr.length; i++) {
+            this.massiv_mes.push(<My_message text="ddd" key={i} text={arr[i].text}/>)
+        }
+        
         return (
             <div id="MessageGrid">
-                <My_message text="ddfssssssssssss"/>
+                {this.massiv_mes}
             </div>
         )
     }

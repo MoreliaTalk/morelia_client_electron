@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import InputPole from "./components/InputPole";
 import MessagePole from "./components/MessagePole";
@@ -19,9 +19,43 @@ const theme = createMuiTheme({
     }, 
 });
 
+class Main extends Component{
+    constructor(props){
+        super(props)
+        this.state = {
+            massiv_mes: [
+            {
+                type: "my",
+                text: "murmur)))"
+            }]
+        }
+
+        this.update_mes = (type, text) => {
+            this.setState(
+                {
+                    massiv_mes: this.state.massiv_mes.concat({
+                        type: type,
+                        text: text
+                    })
+                }
+            )
+        }
+
+    }
+    render(){
+        return(
+            <>
+                <MessagePole data={this.state.massiv_mes}/>
+                <InputPole send_method={this.update_mes}/>
+            </>
+        )
+    }
+
+}
+
+
 ReactDOM.render(
     <ThemeProvider theme={theme}>
-        <MessagePole/>
-        <InputPole/>
+        <Main />
     </ThemeProvider>
 , document.getElementById("root"));
