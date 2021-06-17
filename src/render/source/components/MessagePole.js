@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import My_message from "./My_message.js"
+import {My_message, Other_message} from "./Message.js"
 
 class MessagePole extends Component{
     constructor(props){
@@ -12,7 +12,11 @@ class MessagePole extends Component{
 
         this.massiv_mes = []
         for (var i = 0; i < arr.length; i++) {
-            this.massiv_mes.push(<My_message key={i} text={arr[i].text}/>)
+            if (arr[i].type == "my"){
+                this.massiv_mes.push(<My_message key={i} text={arr[i].text}/>)
+            }else if (arr[i].type == "other_user"){
+                this.massiv_mes.push(<Other_message key={i} text={arr[i].text}/>)
+            }
         }
         
         return (

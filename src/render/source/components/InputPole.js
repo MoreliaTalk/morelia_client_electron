@@ -9,7 +9,7 @@ class InputPole extends Component {
     }
 
     send(){
-        this.props.send_method("my", document.getElementById("text_input").value)
+        this.props.send_method("other_user", document.getElementById("text_input").value)
     }
 
     componentDidMount() {

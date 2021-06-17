@@ -14,7 +14,7 @@ const theme = createMuiTheme({
             main: "#00ff00"
         },
         secondary: {
-            main: "#373737"
+            main: "#fde910"
         },
     }, 
 });
@@ -23,11 +23,7 @@ class Main extends Component{
     constructor(props){
         super(props)
         this.state = {
-            massiv_mes: [
-            {
-                type: "my",
-                text: "Hello_World)))"
-            }]
+            massiv_mes: []
         }
 
         this.update_mes = (type, text) => {

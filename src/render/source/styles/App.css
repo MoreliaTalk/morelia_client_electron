@@ -24,7 +24,7 @@ body {
 }
 
 #button_send{
-    background-color:#00ff00;
+    background-color:#fde910;
     color: #161616;
     margin: 10px;
     margin-left: 0px;
@@ -50,4 +50,21 @@ body {
     margin-top: 3px;
     margin-right: 10px;
     white-space: pre-wrap;
+}
+
+.mes_other{
+    background-color: #fde910;
+    border-radius: 20px;
+    border-bottom-left-radius: 5px;
+    width: max-content;
+    height: max-content;
+    padding: 10px;
+    margin-right: auto;
+    margin-top: 3px;
+    margin-left: 10px;
+    white-space: pre-wrap;
+}
+
+.text_mes_other{
+    color: black;
 }
