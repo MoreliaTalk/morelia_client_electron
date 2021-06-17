@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import InputPole from "./components/InputPole";
 import MessagePole from "./components/MessagePole";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core"
+import Com_server from "./server_communication/communication_main";
 
 
 import './styles/App.css';
@@ -26,23 +27,31 @@ class Main extends Component{
             massiv_mes: []
         }
 
-        this.update_mes = (type, text) => {
-            this.setState(
-                {
-                    massiv_mes: this.state.massiv_mes.concat({
-                        type: type,
-                        text: text
-                    })
-                }
-            )
-        }
+        this.server_com = new Com_server()
+        this.server_com.connect("ws://localhost:8080/ws")
+
+        this.send_mes = this.send_mes.bind(this)
 
     }
+
+    send_mes(type, text){
+        this.server_com.send(text)
+
+        this.setState(
+            {
+                massiv_mes: this.state.massiv_mes.concat({
+                    type: type,
+                    text: text
+                })
+            }
+        )
+    };
+
     render(){
         return(
             <>
                 <MessagePole data={this.state.massiv_mes}/>
-                <InputPole send_method={this.update_mes}/>
+                <InputPole send_method={this.send_mes}/>
             </>
         )
     }
