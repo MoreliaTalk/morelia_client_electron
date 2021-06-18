@@ -12,7 +12,9 @@
     "custom-electron-titlebar": "^3.2.7",
     "file-loader": "^6.2.0",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "sequelize": "^6.6.2",
+    "sqlite3": "^5.0.2"
   },
   "scripts": {
     "start": "webpack --mode development && electron .",
