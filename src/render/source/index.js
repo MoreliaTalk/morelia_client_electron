@@ -24,7 +24,12 @@ class Main extends Component{
     constructor(props){
         super(props)
         this.state = {
-            massiv_mes: []
+            massiv_mes: [
+                {
+                    type: "my",
+                    text: "Hello World)))"
+                }
+            ]
         }
 
         this.server_com = new Com_server()
@@ -35,8 +40,6 @@ class Main extends Component{
     }
 
     send_mes(type, text){
-        this.server_com.send(text)
-
         this.setState(
             {
                 massiv_mes: this.state.massiv_mes.concat({
@@ -45,6 +48,7 @@ class Main extends Component{
                 })
             }
         )
+        this.server_com.send(text)
     };
 
     render(){
