@@ -1,3 +1,4 @@
+const { Disposable } = require("custom-electron-titlebar/common/lifecycle");
 const { Sequelize, DataTypes } = require("sequelize")
 
 class Database_manage{
@@ -10,26 +11,45 @@ class Database_manage{
     async connect(){
         try {
             await this.orm_sequelize.authenticate();
-            console.log('Connection has been established successfully.');
+            console.log('Успешное подключение локальной базе данных');
         } catch (error) {
-            console.error('Unable to connect to the database:', error);
+            console.error('Ошибка подключения: ', error);
         }
 
-        const User = this.orm_sequelize.define("user", {
-            username: {
+        const login_data = this.orm_sequelize.define("login_data", {
+            login: {
+                type: DataTypes.STRING
+            },
+            password: {
                 type: DataTypes.STRING
             }
         });
-        this.orm_sequelize.sync()
-        
-        const jane = await User.create({ username: "Jane" });
 
+        const auth_data = this.orm_sequelize.define("auth_data", {
+            uuid: {
+                type: DataTypes.INTEGER
+            },
+            auth_id: {
+                type: DataTypes.STRING
+            }
+        });
+
+        this.orm_sequelize.sync()
+    }
+
+    async save_login_data(login, password){
+        login_data.create({
+            login: login,
+            password: password,
+        })
     }
 }
 
 
 db = new Database_manage()
 db.connect()
+
+db.save_login_data("NIKITA", "был сдесь)))")
 
 
 
