@@ -5,6 +5,8 @@ import MessagePole from "./components/MessagePole";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core"
 import Com_server from "./server_communication/communication_main";
 
+const { getGlobal } = require("electron").remote
+
 
 import './styles/App.css';
 
@@ -23,6 +25,8 @@ const theme = createMuiTheme({
 class Main extends Component{
     constructor(props){
         super(props)
+
+
         this.state = {
             massiv_mes: [
                 {
@@ -34,9 +38,23 @@ class Main extends Component{
 
         this.server_com = new Com_server()
         this.server_com.connect("ws://localhost:8080/ws")
+        var db = getGlobal("db")
+        this.db = new db()
+        this.db.connect()
+        console.log(this.db.get_login_data())
 
         this.send_mes = this.send_mes.bind(this)
 
+        if (this.db.is_login_data()) {
+            this.data_render = <>
+            <MessagePole data={this.state.massiv_mes}/>
+            <InputPole send_method={this.send_mes}/>
+            </>
+        } else {
+            this.data_render = <>
+                <p>REGISTER</p>
+            </>
+        }
     }
 
     send_mes(type, text){
@@ -54,8 +72,7 @@ class Main extends Component{
     render(){
         return(
             <>
-                <MessagePole data={this.state.massiv_mes}/>
-                <InputPole send_method={this.send_mes}/>
+                {this.data_render}
             </>
         )
     }
