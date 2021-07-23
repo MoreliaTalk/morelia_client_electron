@@ -4,11 +4,13 @@ import InputPole from "./components/InputPole";
 import MessagePole from "./components/MessagePole";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core"
 import Com_server from "./server_communication/communication_main";
+import Register_pole from "./components/Register_Pole"
 
 const { getGlobal } = require("electron").remote
 
 
 import './styles/App.css';
+import Register_Pole from "./components/Register_Pole";
 
 const theme = createMuiTheme({
     palette: { 
@@ -33,28 +35,18 @@ class Main extends Component{
                     type: "my",
                     text: "Hello World)))"
                 }
-            ]
+            ],
+            reg_or_login: false
         }
 
         this.server_com = new Com_server()
-        this.server_com.connect("ws://localhost:8080/ws")
+        this.server_com.connect("ws://localhost:8000/ws")
         var db = getGlobal("db")
         this.db = new db()
         this.db.connect()
-        console.log(this.db.get_login_data())
 
         this.send_mes = this.send_mes.bind(this)
-
-        if (this.db.is_login_data()) {
-            this.data_render = <>
-            <MessagePole data={this.state.massiv_mes}/>
-            <InputPole send_method={this.send_mes}/>
-            </>
-        } else {
-            this.data_render = <>
-                <p>REGISTER</p>
-            </>
-        }
+        this.reg_send = this.reg_send.bind(this)
     }
 
     send_mes(type, text){
@@ -66,10 +58,29 @@ class Main extends Component{
                 })
             }
         )
-        this.server_com.send(text)
     };
 
+    reg_send(login, password){
+        console.log("ss")
+        this.server_com.reg_user(login, password)
+        this.db.save_login_data(login, password)
+        this.setState({
+            reg_or_login: !this.state.reg_or_login,
+        })
+    }
+
     render(){
+        if (this.db.is_login_data()) {
+            this.data_render = 
+            <div id = "root_for_main">
+                <MessagePole data={this.state.massiv_mes}/>
+                <InputPole send_method={this.send_mes}/>
+            </div>
+        } else {
+            this.data_render = <>
+                <Register_Pole reg_send={this.reg_send}/>
+            </>
+        }
         return(
             <>
                 {this.data_render}

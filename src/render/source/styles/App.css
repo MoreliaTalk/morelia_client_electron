@@ -4,13 +4,18 @@ body {
 
 #root{
     position: absolute;
-    top: -21px;
-    display: grid;  
-    grid-template-rows: 1fr 76px;
-    height: calc(21px + 100%);
-    width: 100%;
+    top: 0px;
+    height: 100%;
     overflow: hidden;
     background-color: #161616;
+    width: 100%;
+}
+
+#root_for_main{
+    display: grid;  
+    grid-template-rows: 1fr 76px;
+    width: 100%;
+    height: 100%;
 }
 
 #forma_input{
@@ -67,4 +72,62 @@ body {
 
 .text_mes_other{
     color: black;
+}
+
+#card_vxod{
+    padding: 10px;
+    width: 30vw;
+    background-color: #00ff00;
+    border-radius: 10px;
+    animation: visible_not_visible 2s;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#card_reg{
+    padding: 10px;
+    width: 30vw;
+    background-color: #fde910;
+    border-radius: 10px;
+    animation: visible_not_visible 2s;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#reg_label{
+    padding: 10px;
+    margin: 0px;
+    background-color: #161616;
+    border-radius: 10px;
+    color: #fde910;
+    text-align: center;
+}
+
+@keyframes visible_not_visible {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+#vxod_label{
+    padding: 10px;
+    margin: 0px;
+    background-color: #161616;
+    border-radius: 10px;
+    color:#00ff00;
+    text-align: center;
+}
+
+#vxod_data{
+    background-color: #161616;
+    border-radius: 10px; 
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
 }

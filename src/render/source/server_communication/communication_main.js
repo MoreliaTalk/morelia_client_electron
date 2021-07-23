@@ -19,8 +19,29 @@ class Com_server{
         this.socket.onmessage = (event) => this.receive(event)
     }
     send(text){
-        this.socket.send(JSON.stringify(data))
+        
     }
+
+    reg_user(login, password){
+        console.log(login, password)
+        this.socket.send(JSON.stringify(
+            {
+                "type": "register_user",
+                "data": {
+                    "user": [{
+                        "password": password,
+                        "login": login
+                        }],
+                    "meta": null
+                    },
+                "jsonapi": {
+                    "version": "1.0"
+                    },
+                "meta": null
+            }
+        ))
+    }
+
     receive(event){
         console.log(event.data)
     }
