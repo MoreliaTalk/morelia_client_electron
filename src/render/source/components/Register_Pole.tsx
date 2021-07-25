@@ -1,9 +1,19 @@
-import React, {Component} from "react";
+import * as React from "react";
+import {Component} from "react";
 import { Button, TextField } from "@material-ui/core";
 
+interface RegPoleState{
+    reg: boolean;
+}
+
+interface RegPoleProps{
+    reg_send: any;
+}
 
 class Register_Pole extends Component{
-    constructor(props){
+    props: RegPoleProps;
+    state: RegPoleState;
+    constructor(props: {} | Readonly<{}>){
         super(props)
         this.state = { reg: false }
     }
@@ -56,7 +66,11 @@ class Register_Pole extends Component{
                             <div id="vxod_data">
                                 <TextField label="Логин" id="reg_login"/>
                                 <TextField label="Пароль" id="reg_password"/>
-                                <Button style={{backgroundColor: "#00ff00", color: "#161616"}} onClick={() => this.props.reg_send(document.getElementById("reg_login").value, document.getElementById("reg_password").value)}>Зарегистрироваться</Button>
+                                <Button style={{backgroundColor: "#00ff00", color: "#161616"}} 
+                                    onClick={() => this.props.reg_send(
+                                    (document.getElementById("reg_login") as HTMLInputElement).value,
+                                    (document.getElementById("reg_password") as HTMLInputElement).value
+                                    )}>Зарегистрироваться</Button>
                             </div>
                         </div>
                     </div>

@@ -1,7 +1,14 @@
-import React, { Component } from "react";
+import * as React from "react";
+import { Component } from "react";
+
+interface MessageProps{
+    text: string
+}
 
 class My_message extends Component{
-    constructor(props){
+    text: string;
+    props: MessageProps;
+    constructor(props: {} | Readonly<{}>){
         super(props)
         this.text = this.props.text 
     }
@@ -16,9 +23,11 @@ class My_message extends Component{
 
 
 class Other_message extends Component{
-    constructor(props){
+    text: string;
+    props: MessageProps;
+    constructor(props: {} | Readonly<{}>){
         super(props)
-        this.text = this.props.text 
+        this.text = this.props.text
     }
     render(){
         return (

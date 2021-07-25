@@ -1,5 +1,6 @@
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
+import * as React from "react";
+import { Component } from "react"
+import * as ReactDOM from "react-dom";
 import InputPole from "./components/InputPole";
 import MessagePole from "./components/MessagePole";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core"
@@ -11,6 +12,7 @@ const { getGlobal } = require("electron").remote
 
 import './styles/App.css';
 import Register_Pole from "./components/Register_Pole";
+
 
 const theme = createMuiTheme({
     palette: { 
@@ -24,8 +26,20 @@ const theme = createMuiTheme({
     }, 
 });
 
+interface stateMain{
+    massiv_mes: {
+        type: string,
+        text: string
+    }[],
+    reg_or_login: boolean
+}
+
 class Main extends Component{
-    constructor(props){
+    server_com: Com_server;
+    db: any;
+    state: stateMain;
+    data_render: JSX.Element;
+    constructor(props: {} | Readonly<{}>){
         super(props)
 
 
@@ -49,7 +63,7 @@ class Main extends Component{
         this.reg_send = this.reg_send.bind(this)
     }
 
-    send_mes(type, text){
+    send_mes(type: string, text: string){
         this.setState(
             {
                 massiv_mes: this.state.massiv_mes.concat({
@@ -60,7 +74,7 @@ class Main extends Component{
         )
     };
 
-    reg_send(login, password){
+    reg_send(login: string, password: string){
         console.log("ss")
         this.server_com.reg_user(login, password)
         this.db.save_login_data(login, password)

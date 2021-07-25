@@ -1,15 +1,27 @@
-import React, { Component } from "react";
+import * as React from "react";
+import { Component } from "react";
 import { TextField, Button } from "@material-ui/core";
 
+interface InputPoleProps{
+    send_method: any
+}
+
+interface InputPoleState{
+    add_height: number
+}
+
 class InputPole extends Component {
-    constructor(props){
+    props: InputPoleProps;
+    timerID: NodeJS.Timeout;
+    state: InputPoleState;
+    constructor(props: {} | Readonly<{}>){
         super(props)
         this.state = {add_height: 19}
         this.send = this.send.bind(this);
     }
 
     send(){
-        this.props.send_method("other_user", document.getElementById("text_input").value)
+        this.props.send_method("other_user", ((document.getElementById("text_input") as HTMLInputElement).value))
     }
 
     componentDidMount() {

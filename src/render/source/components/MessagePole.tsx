@@ -1,8 +1,18 @@
-import React, { Component } from "react";
-import {My_message, Other_message} from "./Message.js"
+import * as React from "react";
+import { Component } from "react";
+import {My_message, Other_message} from "./Message"
+
+interface MessagePoleProps{
+    data: {
+        type: string,
+        text: string
+    }[]
+}
 
 class MessagePole extends Component{
-    constructor(props){
+    props: MessagePoleProps;
+    massiv_mes: any[];
+    constructor(props: {} | Readonly<{}>){
         super(props)
     }
 
