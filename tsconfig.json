@@ -3,7 +3,7 @@
       "outDir": "./src/render/dist",
       "noImplicitAny": true,
       "strictNullChecks": true,
-      "module": "es6",
+      "module": "commonJS",
       "target": "es5",
       "jsx": "react",
       "allowJs": true,

@@ -1,13 +1,26 @@
-import Ajv, { JTDDataType } from "ajv/dist/core"
-const ajv = new Ajv()
+import * as validate_scheme from "./validate_schema"
 
-const MainScheme = {
-    properties:{
-        type: {type: "string"}
+interface MainSchemeType{
+    type?: string;
+    data?: {
+        time?: number;
     }
 }
 
-type MainSchemeType = JTDDataType<typeof MainScheme>
+class Validate{
+    constructor(){
+        console.log("validator is ready")
+    }
+    validate(data: {}){
+        return validate_scheme(data)
+    }
+    new_object(){
+        var a: MainSchemeType = {}
+        if(validate_scheme(a)){
+            console.log(a)
+        }
+    }
+}
 
-const validate = ajv.compile<MainSchemeType>(MainScheme)
-
+const valid = new Validate()
+console.log(valid.new_object())
