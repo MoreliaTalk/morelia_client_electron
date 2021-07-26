@@ -2,3 +2,4 @@ node_modules/
 src/render/dist/
 database.sqlite
 morelia_client_electron-win32-x64
+scr/render/source/server_communication/api.js
