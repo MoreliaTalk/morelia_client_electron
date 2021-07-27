@@ -1,0 +1,19 @@
+{
+    "$id": "messsage.json",
+    "nullable": true,
+    "type": "object",
+    "properties": {
+        "id": { "type": "integer", "default": null, "nullable": true },
+        "text": { "type": "string", "default": null, "nullable": true },
+        "from_user_uuid": { "type": "integer", "default": null, "nullable": true },
+        "from_flow_id": { "type": "integer", "default": null, "nullable": true },
+        "time": { "type": "integer", "default": null, "nullable": true },
+        "file_picture": { "type": "string", "default": null, "nullable": true },
+        "file_video": { "type": "string", "default": null, "nullable": true },
+        "file_audio": { "type": "string", "default": null, "nullable": true },
+        "file_document": { "type": "string", "default": null, "nullable": true },
+        "emoji": { "type": "string", "default": null, "nullable": true },
+        "edited_time": { "type": "integer", "default": null, "nullable": true },
+        "edited_status": { "type": "boolean", "default": null, "nullable": true }
+    }
+}

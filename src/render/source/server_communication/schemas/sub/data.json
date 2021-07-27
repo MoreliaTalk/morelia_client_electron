@@ -2,8 +2,9 @@
     "$id": "data.json",
     "nullable": true,
     "type": "object",
-    "properties":{
+    "properties": {
         "time": { "type": "integer", "default": null, "nullable": true },
-        "flow": { "$ref": "flow.json", "default": null }
+        "flow": { "type": "array", "items": { "$ref": "flow.json" }, "default": null },
+        "message": { "type": "array", "items": { "$ref": "message.json" }, "default": null }
     }
 }
