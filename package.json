@@ -20,7 +20,7 @@
     "start": "webpack --mode development && electron .",
     "dev": "webpack --mode development --watch",
     "start_no_pack": "electron .",
-    "schemaCompile": "cd ./src/render/source/server_communication/schemas/ && ajv compile -s schema.json -o validate_schema.js -r sub_schemas/data.json -r sub_schemas/data.json --use-defaults"
+    "schemaCompile": "cd ./src/render/source/server_communication/schemas/ && ajv compile -s schema.json -o validate_schema.js -r sub/**/*.json --use-defaults"
   },
   "devDependencies": {
     "@types/react": "^17.0.15",
