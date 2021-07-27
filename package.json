@@ -20,12 +20,11 @@
     "start": "webpack --mode development && electron .",
     "dev": "webpack --mode development --watch",
     "start_no_pack": "electron .",
-    "schemaCompile": "ajv compile -s ./src/render/source/server_communication/schema.json -o ./src/render/source/server_communication/validate_schema.js --use-defaults"
+    "schemaCompile": "cd ./src/render/source/server_communication/schemas/ && ajv compile -s schema.json -o validate_schema.js -r sub_schemas/data.json -r sub_schemas/data.json --use-defaults"
   },
   "devDependencies": {
     "@types/react": "^17.0.15",
     "@types/react-dom": "^17.0.9",
-    "ajv-cli": "^5.0.0",
     "css-loader": "^5.2.6",
     "electron": "^13.1.2",
     "electron-packager": "^15.3.0",

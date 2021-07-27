@@ -1,4 +1,4 @@
-import * as validate_scheme from "./validate_schema"
+import * as validate_scheme from "./schemas/validate_schema"
 
 interface MainSchemeType{
     type?: string;

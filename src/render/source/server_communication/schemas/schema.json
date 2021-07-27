@@ -1,0 +1,11 @@
+{
+    "type": "object",
+    "properties": {
+        "type": { "type": "string", "default": null, "nullable": true },
+        "data": { "$ref": "data.json", "default": null },
+        "errors": { "$ref": "errors.json", "default": null },
+        "jsonapi": { "$ref": "jsonapi.json", "default": null },
+        "meta": { "$ref": "meta.json", "default": null }
+    },
+    "additionalProperties": false
+}
