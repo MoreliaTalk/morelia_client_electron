@@ -1,3 +1,11 @@
 {
-    "$id": "errors.json"
+    "$id": "errors.json",
+    "nullable": true,
+    "type": "object",
+    "properties": {
+        "code": { "type": "integer", "default": null, "nullable": true },
+        "status": { "type": "string", "default": null, "nullable": true },
+        "time": { "type": "integer", "default": null, "nullable": true },
+        "detail": { "type": "string", "default": null, "nullable": true }
+    }
 }
