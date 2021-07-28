@@ -4,9 +4,9 @@
     "type": "object",
     "properties": {
         "time": { "type": "integer", "default": null, "nullable": true },
-        "flow": { "type": "array", "items": { "$ref": "flow.json" }, "default": null },
-        "message": { "type": "array", "items": { "$ref": "message.json" }, "default": null },
-        "user": { "type": "array", "items": { "$ref": "user.json" }, "default": null },
+        "flow": { "type": "array", "items": { "$ref": "flow.json" }, "default": null, "nullable": true },
+        "message": { "type": "array", "items": { "$ref": "message.json" }, "default": null, "nullable": true },
+        "user": { "type": "array", "items": { "$ref": "user.json" }, "default": null, "nullable": true },
         "meta": { "type": "null", "default": null, "nullable": true }
     }
 }

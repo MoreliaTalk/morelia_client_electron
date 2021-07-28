@@ -1,16 +1,25 @@
-import * as validate_scheme from "./schemas/validate_schema"
+import MainType from "./scemasType/main"
+import { Data } from "./scemasType/main"
+import validate_schema = require("./schemas/validate_schema")
 
 class Validate{
     constructor(){
         console.log("validator is ready")
     }
     validate(data: {}){
-        return validate_scheme(data)
+        return validate_schema(data)
     }
     new_object(){
-        var a: MainSchemeType = {}
-        if(validate_scheme(a)){
-            console.log(a)
+        var main_object: MainType = {}
+        main_object.type = ""
+        main_object.data = {}
+        main_object.errors = {}
+        main_object.jsonapi = {}
+        var validato = validate_schema(main_object)
+        if(validato){
+            console.log(main_object);
+        } else {
+            console.log(validate_schema)
         }
     }
 }

@@ -54,7 +54,7 @@ interface JsonApi {
     version?: string
 }
 
-interface Main {
+interface MainType {
     type?: string,
     data?: Data,
     errors?: Errors,
@@ -62,4 +62,5 @@ interface Main {
     meta?: any
 }
 
-export default Main;
+export { Flow, Message, User, Data, Errors, JsonApi };
+export default MainType;
