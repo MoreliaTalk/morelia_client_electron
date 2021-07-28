@@ -51,7 +51,7 @@ interface Errors{
 }
 
 interface JsonApi{
-    version?: string,
+    version?: string
 }
 
 interface Main{
