@@ -44,7 +44,10 @@ interface Data{
 }
 
 interface Errors{
-    
+    code?: number,
+    status?: string,
+    time?: number,
+    detail?: string
 }
 
 interface JsonApi{
