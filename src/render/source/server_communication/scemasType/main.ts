@@ -61,3 +61,5 @@ interface Main {
     jsonapi?: JsonApi,
     meta?: any
 }
+
+export default Main;
