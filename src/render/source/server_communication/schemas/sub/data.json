@@ -5,6 +5,7 @@
     "properties": {
         "time": { "type": "integer", "default": null, "nullable": true },
         "flow": { "type": "array", "items": { "$ref": "flow.json" }, "default": null },
-        "message": { "type": "array", "items": { "$ref": "message.json" }, "default": null }
+        "message": { "type": "array", "items": { "$ref": "message.json" }, "default": null },
+        "user": { "type": "array", "items": { "$ref": "user.json" }, "default": null }
     }
 }

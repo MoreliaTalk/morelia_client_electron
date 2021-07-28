@@ -1,0 +1,18 @@
+{
+    "$id": "user.json",
+    "nullable": true,
+    "type": "object",
+    "properties": {
+        "uuid": { "type": "integer", "default": null, "nullable": true },
+        "login": { "type": "string", "default": null, "nullable": true },
+        "username": { "type": "string", "default": null, "nullable": true },
+        "bio": { "type": "string", "default": null, "nullable": true },
+        "avatar": { "type": "string", "default": null, "nullable": true },
+        "password": { "type": "string", "default": null, "nullable": true },
+        "salt": { "type": "string", "default": null, "nullable": true },
+        "key": { "type": "string", "default": null, "nullable": true },
+        "is_bot": { "type": "boolean", "default": null, "nullable": true },
+        "auth_id": { "type": "string", "default": null, "nullable": true },
+        "email": { "type": "string", "default": null, "nullable": true }
+    }
+}
