@@ -1,5 +1,4 @@
 import MainType from "./scemasType/main"
-import { Data } from "./scemasType/main"
 import validate_schema = require("./schemas/validate_schema")
 
 class Validate{
@@ -9,20 +8,17 @@ class Validate{
     validate(data: {}){
         return validate_schema(data)
     }
-    new_object(){
+    new_object(): MainType { 
         var main_object: MainType = {}
-        main_object.type = ""
-        main_object.data = {}
-        main_object.errors = {}
-        main_object.jsonapi = {}
-        var validato = validate_schema(main_object)
-        if(validato){
-            console.log(main_object);
-        } else {
-            console.log(validate_schema)
-        }
+        validate_schema(main_object)
+        return main_object
     }
 }
 
 const valid = new Validate()
-console.log(valid.new_object())
+var objecta = valid.new_object()
+objecta.data = {}
+objecta.data.flow = []
+objecta.data.flow[0] = {}
+objecta.data.flow[0].type = ""
+console.log(objecta)
