@@ -1,5 +1,5 @@
 {
-    "$id": "messsage.json",
+    "$id": "message.json",
     "nullable": true,
     "type": "object",
     "properties": {
