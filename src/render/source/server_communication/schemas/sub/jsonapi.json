@@ -1,3 +1,8 @@
 {
-    "$id": "jsonapi.json"
+    "$id": "jsonapi.json",
+    "nullable": true,
+    "type": "object",
+    "properties": {
+        "version": { "type": "string", "default": null, "nullable": true }
+    }
 }
