@@ -1,12 +1,5 @@
 import * as validate_scheme from "./schemas/validate_schema"
 
-interface MainSchemeType{
-    type?: string;
-    data?: {
-        time?: number;
-    }
-}
-
 class Validate{
     constructor(){
         console.log("validator is ready")
