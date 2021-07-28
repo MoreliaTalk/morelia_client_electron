@@ -1,4 +1,4 @@
-interface Flow{
+interface Flow {
     id?: number,
     time?: number,
     type?: string,
@@ -6,7 +6,7 @@ interface Flow{
     info?: string
 }
 
-interface Message{
+interface Message {
     id?: number,
     text?: string,
     from_user_uuid?: number,
@@ -21,7 +21,7 @@ interface Message{
     edited_status?: boolean
 }
 
-interface User{
+interface User {
     uuid?: number,
     login?: string,
     username?: string,
@@ -35,7 +35,7 @@ interface User{
     email?: string
 }
 
-interface Data{
+interface Data {
     time?: number,
     flow?: Flow[],
     message?: Message[]
@@ -43,18 +43,18 @@ interface Data{
     meta?: any
 }
 
-interface Errors{
+interface Errors {
     code?: number,
     status?: string,
     time?: number,
     detail?: string
 }
 
-interface JsonApi{
+interface JsonApi {
     version?: string
 }
 
-interface Main{
+interface Main {
     type?: string,
     data?: Data,
     errors?: Errors,
