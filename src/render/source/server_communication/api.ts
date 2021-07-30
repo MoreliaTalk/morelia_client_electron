@@ -1,9 +1,15 @@
+import example from "./exampleProtocol/example"
 import MainType from "./scemasType/main"
 import validate_schema = require("./schemas/validate_schema")
 
 class Validate{
     constructor(){
-        console.log("validator is ready")
+        var examp: MainType = example;
+        if (validate_schema(examp)){
+            console.log("validator is ready")
+        } else {
+            console.log("Валидатор не соответствует примеруы")
+        }
     }
     validate(data: {}){
         return validate_schema(data)
