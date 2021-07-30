@@ -3,7 +3,7 @@
     "nullable": true,
     "type": "object",
     "properties": {
-        "uuid": { "type": "integer", "default": null, "nullable": true },
+        "uuid": { "type": "string", "default": null, "nullable": true },
         "login": { "type": "string", "default": null, "nullable": true },
         "username": { "type": "string", "default": null, "nullable": true },
         "bio": { "type": "string", "default": null, "nullable": true },
@@ -13,6 +13,7 @@
         "key": { "type": "string", "default": null, "nullable": true },
         "is_bot": { "type": "boolean", "default": null, "nullable": true },
         "auth_id": { "type": "string", "default": null, "nullable": true },
-        "email": { "type": "string", "default": null, "nullable": true }
+        "email": { "type": "string", "default": null, "nullable": true },
+        "time_created": { "type": "integer", "default": null, "nullable": true }
     }
 }
