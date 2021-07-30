@@ -8,7 +8,7 @@ class Validate{
         if (validate_schema(examp)){
             console.log("validator is ready")
         } else {
-            console.log("Валидатор не соответствует примеруы")
+            console.log("Валидатор не соответствует примеру")
         }
     }
     validate(data: {}){

@@ -6,18 +6,23 @@ const example = {
     "data": {
         "time": 1594492370,
         "flow": [{
-            "id": 1254,
+            "uuid": "1254",
             "time": 1594492370,
             "type": "chat",
             "title": "Name Chat",
-            "info": "Info about this chat"
+            "info": "Info about this chat",
+            "owner": "123456",
+            "users": ["123456", "65478"],
+            "message_start": 0,
+            "message_end": 100
         }],
         "message": [{
-            "id": 1,
+            "uuid": "1",
+            "client_id": 123,
             "text": "some text...",
-            "from_user_uuid": 1254,
+            "from_user": "1234567",
             "time": 1594492370,
-            "from_flow_id": 123655455,
+            "from_flow": "123655455",
             "file_picture": "jkfikdkdsd",
             "file_video": "sdfsdfsdf",
             "file_audio": "fgfsdfsdfsdf",
@@ -27,7 +32,7 @@ const example = {
             "edited_status": true
         }],
         "user": [{
-            "uuid": 5855,
+            "uuid": "1234567",
             "login": "username1",
             "password": "lksdjflksjfsd",
             "salt": "salt",
@@ -37,7 +42,8 @@ const example = {
             "auth_id": "4646hjgjhg64",
             "email": "querty@querty.com",
             "avatar": "fffdddddd",
-            "bio": "My bio"
+            "bio": "My bio",
+            "time_created": 2542445821452
         }],
         "meta": null
     },
@@ -46,10 +52,10 @@ const example = {
         "status": "OK",
         "time": 1594492370,
         "detail": "successfully"
-        },
+    },
     "jsonapi": {
         "version": "1.0"
-        },
+    },
     "meta": null
     }
 

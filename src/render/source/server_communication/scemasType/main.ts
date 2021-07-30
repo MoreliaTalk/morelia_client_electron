@@ -1,16 +1,21 @@
 interface Flow {
-    id?: number,
+    uuid?: string,
     time?: number,
     type?: string,
+    owner?: string,
+    users?: string[],
     title?: string,
-    info?: string
+    info?: string,
+    message_start?: number,
+    message_end?: number
 }
 
 interface Message {
-    id?: number,
+    uuid?: string,
+    client_id?: number,
     text?: string,
-    from_user_uuid?: number,
-    from_flow_id?: number,
+    from_user?: string,
+    from_flow?: string,
     time?: number,
     file_picture?: string,
     file_video?: string,
@@ -22,7 +27,7 @@ interface Message {
 }
 
 interface User {
-    uuid?: number,
+    uuid?: string,
     login?: string,
     username?: string,
     bio?: string,
@@ -32,7 +37,8 @@ interface User {
     key?: string,
     is_bot?: boolean,
     auth_id?: string,
-    email?: string
+    email?: string,
+    time_created?: number
 }
 
 interface Data {
