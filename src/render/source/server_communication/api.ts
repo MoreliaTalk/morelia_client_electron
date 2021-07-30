@@ -17,8 +17,3 @@ class Validate{
 
 const valid = new Validate()
 var objecta = valid.new_object()
-objecta.data = {}
-objecta.data.flow = []
-objecta.data.flow[0] = {}
-objecta.data.flow[0].type = ""
-console.log(objecta)
