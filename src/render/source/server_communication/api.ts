@@ -8,7 +8,7 @@ class Validate{
         if (validate_schema(examp)){
             console.log("validator is ready")
         } else {
-            console.log("Валидатор не соответствует примеру")
+            console.error("ERROR: The validator does not match the example")
         }
     }
     validate(data: {}){
@@ -20,6 +20,3 @@ class Validate{
         return main_object
     }
 }
-
-const valid = new Validate()
-var objecta = valid.new_object()
