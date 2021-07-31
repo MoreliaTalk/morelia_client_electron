@@ -1,6 +1,5 @@
 import * as React from "react";
 import { Component } from "react";
-import { TextField, Button } from "@material-ui/core";
 
 interface InputPoleProps{
     send_method: any
@@ -45,14 +44,14 @@ class InputPole extends Component {
     }
 
     render() {
+        //TODO Заменить простые компоненты на более эстетичные
         return (
-                <form id="forma_input">
+                <div id="forma_input">
                     <div id="text_input_container">
-                        <TextField id="text_input" multiline={true} fullWidth={true} label="Введите текст сообщения:" 
-                        color="primary"/>
+                        <textarea id="text_input" placeholder = "Введите текст сообщения:"/>
                     </div>
-                    <Button id="button_send" onClick={this.send}>Отправить</Button>
-                </form>
+                    <button id="button_send" onClick={this.send}>Отправить</button>
+                </div>
         );
     }
 }

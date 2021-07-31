@@ -2,7 +2,7 @@
     "compilerOptions": {
       "outDir": "./src/render/dist",
       "noImplicitAny": true,
-      "strictNullChecks": true,
+      //"strictNullChecks": true,
       "module": "commonJS",
       "target": "es5",
       "jsx": "react",

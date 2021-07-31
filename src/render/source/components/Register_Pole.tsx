@@ -1,6 +1,5 @@
 import * as React from "react";
 import {Component} from "react";
-import { Button, TextField } from "@material-ui/core";
 
 interface RegPoleState{
     reg: boolean;
@@ -26,7 +25,7 @@ class Register_Pole extends Component{
                         right: "10px",
                         bottom: "10px"
                     }}>
-                        <Button variant="outlined" onClick={() => this.setState({reg: true})}>Ещё не зарегистрированны? Кликните сюда!</Button>
+                        <button onClick={() => this.setState({reg: true})}>Ещё не зарегистрированны? Кликните сюда!</button>
                     </div>
                     <div style={{
                         display: "flex",
@@ -37,9 +36,9 @@ class Register_Pole extends Component{
                         <div id="card_vxod">
                             <h1 id="vxod_label">Вход</h1>
                             <div id="vxod_data">
-                                <TextField label="Логин" color="secondary"/>
-                                <TextField label="Пароль" color="secondary"/>
-                                <Button style={{backgroundColor: "#fde910", color: "#161616"}}>Войти</Button>
+                                <input placeholder="Логин"/>
+                                <input placeholder="Пароль"/>
+                                <button style={{backgroundColor: "#fde910", color: "#161616"}}>Войти</button>
                             </div>
                         </div>
                     </div>
@@ -53,7 +52,7 @@ class Register_Pole extends Component{
                         right: "10px",
                         bottom: "10px"
                     }}>
-                        <Button variant="outlined" onClick={() => this.setState({reg: false})}>Уже зарегистрированны? Кликните сюда!</Button>
+                        <button onClick={() => this.setState({reg: false})}>Уже зарегистрированны? Кликните сюда!</button>
                     </div>
                     <div style={{
                         display: "flex",
@@ -64,13 +63,13 @@ class Register_Pole extends Component{
                         <div id="card_reg">
                             <h1 id="reg_label">Регистрация</h1>
                             <div id="vxod_data">
-                                <TextField label="Логин" id="reg_login"/>
-                                <TextField label="Пароль" id="reg_password"/>
-                                <Button style={{backgroundColor: "#00ff00", color: "#161616"}} 
+                                <input placeholder="Логин" id="reg_login"/>
+                                <input placeholder="Пароль" id="reg_password"/>
+                                <button style={{backgroundColor: "#00ff00", color: "#161616"}} 
                                     onClick={() => this.props.reg_send(
                                     (document.getElementById("reg_login") as HTMLInputElement).value,
                                     (document.getElementById("reg_password") as HTMLInputElement).value
-                                    )}>Зарегистрироваться</Button>
+                                    )}>Зарегистрироваться</button>
                             </div>
                         </div>
                     </div>

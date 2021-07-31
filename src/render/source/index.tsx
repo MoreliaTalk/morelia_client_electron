@@ -3,28 +3,12 @@ import { Component } from "react"
 import * as ReactDOM from "react-dom";
 import InputPole from "./components/InputPole";
 import MessagePole from "./components/MessagePole";
-import { createMuiTheme, ThemeProvider } from "@material-ui/core"
 import Com_server from "./server_communication/communication_main";
-import Register_pole from "./components/Register_Pole"
+import Register_Pole from "./components/Register_Pole";
 
 const { getGlobal } = require("electron").remote
 
-
 import './styles/App.css';
-import Register_Pole from "./components/Register_Pole";
-
-
-const theme = createMuiTheme({
-    palette: { 
-        type: 'dark',
-        primary: {
-            main: "#00ff00"
-        },
-        secondary: {
-            main: "#fde910"
-        },
-    }, 
-});
 
 interface stateMain{
     massiv_mes: {
@@ -105,8 +89,4 @@ class Main extends Component{
 }
 
 
-ReactDOM.render(
-    <ThemeProvider theme={theme}>
-        <Main />
-    </ThemeProvider>
-, document.getElementById("root"));
+ReactDOM.render(<Main />, document.getElementById("root"));
