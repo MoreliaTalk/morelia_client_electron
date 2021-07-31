@@ -12,6 +12,10 @@ button, textarea, input {
     font: inherit;
 }
 
+textarea:focus, input:focus{
+    outline: none;
+}
+
 #root{
     position: absolute;
     top: 0px;
@@ -23,7 +27,7 @@ button, textarea, input {
 
 #root_for_main{
     display: grid;  
-    grid-template-rows: 1fr 76px;
+    grid-template-rows: 1fr 86px;
     width: 100%;
     height: 100%;
 }
@@ -31,20 +35,25 @@ button, textarea, input {
 #forma_input{
     display: grid;
     grid-template-columns: 5fr 1fr;
-    background-color: #161616;
 }
 
-#text_input_container{
+#text_input{
     margin: 10px;
+    margin-right: 0px;
+    border-radius: 10px;
+    border: #00ff00 3px solid;
+    color: white;
+    background-color: #161616;
+    resize: none;
+    padding: 10px;
 }
 
 #button_send{
-    background-color:#fde910;
-    color: #161616;
     margin: 10px;
-    margin-left: 0px;
+    color: black;
     border-radius: 10px;
-    height: 56px;
+    border: #fde910 3px solid;
+    background-color: #fde910;
 }
 
 #MessageGrid{
