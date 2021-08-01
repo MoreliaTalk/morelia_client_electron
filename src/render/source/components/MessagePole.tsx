@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Component } from "react";
-import {My_message, Other_message} from "./Message"
+import { My_message, Other_message } from "./Message"
 
 interface MessagePoleProps{
     data: {

@@ -1,31 +1,37 @@
+/* Реализованно */
 ::-webkit-scrollbar{
     width: 10px;
 }
 
+/* Реализованно */
 ::-webkit-scrollbar-thumb{
     border-radius: 10px;
     background-color: #fde910;
 }
 
-
+/* Реализованно */
 @font-face {
     font-family: RobotoRegular;
     src: url("../fonts/Roboto-Regular.ttf");
 }
 
+/* Реализованно */
 body {
     margin: 0;
     font-family: RobotoRegular;
 }
 
+/* Реализованно */
 button, textarea, input {
     font: inherit;
 }
 
+/* Реализованно */
 textarea:focus, input:focus{
     outline: none;
 }
 
+/* Реализованно */
 #root{
     position: absolute;
     top: 0px;
@@ -35,6 +41,7 @@ textarea:focus, input:focus{
     width: 100%;
 }
 
+/* Реализованно */
 #root_for_main{
     display: grid;  
     grid-template-rows: 1fr 86px;
@@ -42,11 +49,13 @@ textarea:focus, input:focus{
     height: 100%;
 }
 
+/* Реализованно */
 #forma_input{
     display: grid;
     grid-template-columns: 5fr 1fr;
 }
 
+/* Реализованно */
 #text_input{
     margin: 10px;
     margin-right: 0px;
@@ -58,6 +67,7 @@ textarea:focus, input:focus{
     padding: 10px;
 }
 
+/* Реализованно */
 input, textarea{
     border-radius: 10px;
     border: #00ff00 3px solid;
@@ -70,6 +80,7 @@ input, textarea{
     border: #fde910 3px solid;
 }
 
+/* Реализованно */
 #button_send{
     margin: 10px;
     color: black;
@@ -78,6 +89,7 @@ input, textarea{
     background-color: #fde910;
 }
 
+/* Реализованно */
 #MessageGrid{
     display: flex;
     flex-direction: column;
@@ -85,6 +97,7 @@ input, textarea{
     justify-content: flex-end;
 }
 
+/* Реализованно */
 .mes_user{
     background-color: #00ff00;
     border-radius: 20px;
@@ -98,6 +111,7 @@ input, textarea{
     white-space: pre-wrap;
 }
 
+/* Реализованно */
 .mes_other{
     background-color: #fde910;
     border-radius: 20px;
@@ -111,10 +125,6 @@ input, textarea{
     white-space: pre-wrap;
 }
 
-.text_mes_other{
-    color: black;
-}
-
 #card_vxod{
     padding: 10px;
     width: 30vw;
@@ -125,6 +135,7 @@ input, textarea{
     flex-direction: column;
     gap: 10px;
 }
+
 
 #card_reg{
     padding: 10px;

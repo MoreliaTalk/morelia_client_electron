@@ -1,0 +1,9 @@
+@use "variables";
+
+@mixin INPUT_styled($color) {
+    border-radius: 10px;
+    border: $color 3px solid;
+    color: variables.$invert_background_color;
+    background-color: variables.$background_color;
+    padding: 10px;
+}

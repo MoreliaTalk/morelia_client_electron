@@ -1,0 +1,23 @@
+@use "variables";
+
+@mixin Message($type) {
+    border-radius: 20px;
+    width: max-content;
+    height: max-content;
+    padding: 10px;
+    white-space: pre-wrap;
+
+    @if $type == "my"{
+        background-color: variables.$primary_color;
+        border-bottom-right-radius: 5px;
+        margin-left: auto;
+        margin-top: 3px;
+        margin-right: 10px;
+    } @else if $type == "other"{
+        background-color: variables.$secondary_color;
+        border-bottom-left-radius: 5px;
+        margin-right: auto;
+        margin-top: 3px;
+        margin-left: 10px;
+    }
+}

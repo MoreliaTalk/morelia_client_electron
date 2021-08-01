@@ -8,7 +8,7 @@ import Register_Pole from "./components/Register_Pole";
 
 const { getGlobal } = require("electron").remote
 
-import './styles/App.css';
+import "./scss/style.scss"
 
 interface stateMain{
     massiv_mes: {
@@ -70,7 +70,7 @@ class Main extends Component{
     render(){
         if (this.db.is_login_data()) {
             this.data_render = 
-            <div id = "root_for_main">
+            <div id = "Main_root">
                 <MessagePole data={this.state.massiv_mes}/>
                 <InputPole send_method={this.send_mes}/>
             </div>
