@@ -1,0 +1,54 @@
+@use "variables.scss";
+@use "input.scss";
+@use "button.scss";
+
+@mixin Card_V_A_R($type) {
+    border-radius: 10px;
+    width: 30vw;
+
+    #RegVxodLabel{
+        margin: 10px;
+        padding: 10px;
+        background-color: variables.$background_color;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    #input_and_button{
+        padding: 10px;
+        background-color: variables.$background_color;
+        border-radius: 10px;
+        margin: 10px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        #knopkaRegVxod{
+            @include button.BUTTON_styled_outlined(variables.$secondary_color);
+            height: 43px;
+        }
+
+    }
+
+    @if ($type == "vxod"){
+        background-color: variables.$primary_color;
+        #RegVxodLabel{
+            color: variables.$primary_color;
+        }
+
+        input{
+            @include input.INPUT_styled(variables.$secondary_color);
+        }
+
+    } @else if ($type == "reg") {
+        background-color: variables.$secondary_color;
+        #RegVxodLabel{
+            color: variables.$secondary_color;
+        }
+
+        input{
+            @include input.INPUT_styled(variables.$primary_color);
+        }
+    }
+}

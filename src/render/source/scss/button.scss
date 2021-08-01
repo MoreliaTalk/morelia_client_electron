@@ -9,3 +9,16 @@
         cursor: pointer;
     }
 }
+
+@mixin BUTTON_styled_outlined($color) {
+    color: $color;
+    border-radius: 10px;
+    border: $color 3px solid;
+    background-color: variables.$background_color;
+    transition: all 400ms ease;
+    &:hover{
+        cursor: pointer;
+        background-color: $color;
+        color: variables.$background_color;
+    }
+}

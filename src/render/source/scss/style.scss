@@ -2,6 +2,7 @@
 @use "variables.scss";
 @use "input.scss";
 @use "button.scss";
+@use "card_vxod_and_reg.scss";
 
 @font-face {
     font-family: RobotoRegular;
@@ -62,18 +63,33 @@ body {
                 display: grid;
                 grid-template-columns: 5fr 1fr;
 
-                #text_input{
+                #text_input {
                     @include input.INPUT_styled(variables.$primary_color);
                     margin: 10px;
                     margin-right: 0px;
                     resize: none;
                 }
 
-                #button_send{
+                #button_send {
                     margin: 10px;
                     @include button.BUTTON_styled(variables.$secondary_color)
                 }
             }
         }
+        
+        #RegVxodRoot {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            #vxod{
+                @include card_vxod_and_reg.Card_V_A_R("vxod")
+            }
+
+            #reg{
+                @include card_vxod_and_reg.Card_V_A_R("reg")
+            }
+        }
+
     }
 }

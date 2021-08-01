@@ -1,90 +1,64 @@
-import * as React from "react";
-import {Component} from "react";
+import * as React from "react"
+import { Component } from "react"
 
-interface RegPoleState{
-    reg: boolean;
+interface RegisterPoleProps {
+    reg_send: any
 }
 
-interface RegPoleProps{
-    reg_send: any;
+interface RegisterPoleState {
+    type: string
 }
 
-class Register_Pole extends Component{
-    props: RegPoleProps;
-    state: RegPoleState;
-    constructor(props: {} | Readonly<{}>){
+class Register_Pole extends Component {
+    props: RegisterPoleProps;
+    state: RegisterPoleState;
+    title: string;
+    input_and_button: () => JSX.Element;
+    knopka: JSX.Element;
+
+    constructor(props: {} | Readonly<{}>) {
         super(props)
-        this.state = { reg: false }
+        this.state = {
+            type: "vxod"
+        }
     }
     render(){
-        if (!this.state.reg){
+        if (this.state.type == "vxod"){
+            this.title = "Вход"
+            this.knopka = <>
+                <button id="knopkaRegVxod">
+                    Войти
+                </button>
+            </>
+
+        } else if (this.state.type == "reg"){
+            this.title = "Регистрация"
+            this.knopka = <>
+                <button id="knopkaRegVxod">
+                    Зарегистрироваться
+                </button>
+            </>
+        }
+
+        this.input_and_button = () => {
             return(
-                <>
-                    <div style={{
-                        position: "fixed",
-                        right: "10px",
-                        bottom: "10px"
-                    }}>
-                        <button onClick={() => this.setState({reg: true})}>Ещё не зарегистрированны? Кликните сюда!</button>
-                    </div>
-                    <div style={{
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        height: "100%",
-                    }}>
-                        <div id="card_vxod">
-                            <h1 id="vxod_label">Вход</h1>
-                            <div id="vxod_data">
-                                <input placeholder="Логин" id="log_login"/>
-                                <input placeholder="Пароль" id="log_password"/>
-                                <button style={{backgroundColor: "#fde910",
-                                                color: "#161616",
-                                                border: "#00ff00 3px solid",
-                                                borderRadius: "10px",}}>Войти</button>
-                            </div>
-                        </div>
-                    </div>
-                </>
-            )
-        } else {
-            return(
-                <>
-                    <div style={{
-                        position: "fixed",
-                        right: "10px",
-                        bottom: "10px"
-                    }}>
-                        <button onClick={() => this.setState({reg: false})}>Уже зарегистрированны? Кликните сюда!</button>
-                    </div>
-                    <div style={{
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        height: "100%",
-                    }}>
-                        <div id="card_reg">
-                            <h1 id="reg_label">Регистрация</h1>
-                            <div id="vxod_data">
-                                <input placeholder="Логин" id="reg_login"/>
-                                <input placeholder="Пароль" id="reg_password"/>
-                                <button style={{
-                                    backgroundColor: "#00ff00",
-                                    color: "#161616",
-                                    border: "#fde910 3px solid",
-                                    borderRadius: "10px",
-                                }} 
-                                    onClick={() => this.props.reg_send(
-                                    (document.getElementById("reg_login") as HTMLInputElement).value,
-                                    (document.getElementById("reg_password") as HTMLInputElement).value
-                                    )}>Зарегистрироваться</button>
-                            </div>
-                        </div>
-                    </div>
-                </>
+                <div id="input_and_button">
+                    <input id="login" placeholder="Логин"></input>
+                    <input id="password" placeholder="Пароль"></input>
+                    { this.knopka }
+                </div>
             )
         }
-    };
-};
+
+        return (
+            <div id="RegVxodRoot">
+                <div id={this.state.type}>
+                    <h1 id="RegVxodLabel">{this.title}</h1>
+                    {this.input_and_button()}
+                </div>
+            </div>
+        );
+    }
+}
 
 export default Register_Pole;
