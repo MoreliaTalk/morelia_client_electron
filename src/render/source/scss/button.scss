@@ -5,10 +5,7 @@
     border-radius: 10px;
     border: $color 3px solid;
     background-color: $color;
-    transition: all 0.5s ease;
     &:hover{
-        background-color: darken($color, 20%);
-        border-color: darken($color, 20%);
-        transition: all 0.5s ease;
+        cursor: pointer;
     }
 }
