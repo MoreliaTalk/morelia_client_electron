@@ -58,6 +58,18 @@ textarea:focus, input:focus{
     padding: 10px;
 }
 
+input, textarea{
+    border-radius: 10px;
+    border: #00ff00 3px solid;
+    color: white;
+    background-color: #161616;
+    padding: 10px;
+}
+
+#log_login, #log_password{
+    border: #fde910 3px solid;
+}
+
 #button_send{
     margin: 10px;
     color: black;

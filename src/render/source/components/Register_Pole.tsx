@@ -36,9 +36,12 @@ class Register_Pole extends Component{
                         <div id="card_vxod">
                             <h1 id="vxod_label">Вход</h1>
                             <div id="vxod_data">
-                                <input placeholder="Логин"/>
-                                <input placeholder="Пароль"/>
-                                <button style={{backgroundColor: "#fde910", color: "#161616"}}>Войти</button>
+                                <input placeholder="Логин" id="log_login"/>
+                                <input placeholder="Пароль" id="log_password"/>
+                                <button style={{backgroundColor: "#fde910",
+                                                color: "#161616",
+                                                border: "#00ff00 3px solid",
+                                                borderRadius: "10px",}}>Войти</button>
                             </div>
                         </div>
                     </div>
