@@ -68,7 +68,12 @@ class Register_Pole extends Component{
                             <div id="vxod_data">
                                 <input placeholder="Логин" id="reg_login"/>
                                 <input placeholder="Пароль" id="reg_password"/>
-                                <button style={{backgroundColor: "#00ff00", color: "#161616"}} 
+                                <button style={{
+                                    backgroundColor: "#00ff00",
+                                    color: "#161616",
+                                    border: "#fde910 3px solid",
+                                    borderRadius: "10px",
+                                }} 
                                     onClick={() => this.props.reg_send(
                                     (document.getElementById("reg_login") as HTMLInputElement).value,
                                     (document.getElementById("reg_password") as HTMLInputElement).value
