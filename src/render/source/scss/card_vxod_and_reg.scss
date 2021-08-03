@@ -25,7 +25,6 @@
         gap: 10px;
 
         #knopkaRegVxod{
-            @include button.BUTTON_styled_outlined(variables.$secondary_color);
             height: 43px;
         }
 
@@ -41,6 +40,10 @@
             @include input.INPUT_styled(variables.$secondary_color);
         }
 
+        #knopkaRegVxod{
+            @include button.BUTTON_styled_outlined(variables.$secondary_color);
+        }
+
     } @else if ($type == "reg") {
         background-color: variables.$secondary_color;
         #RegVxodLabel{
@@ -50,5 +53,10 @@
         input{
             @include input.INPUT_styled(variables.$primary_color);
         }
+
+        #knopkaRegVxod{
+            @include button.BUTTON_styled_outlined(variables.$primary_color);
+        }
+
     }
 }

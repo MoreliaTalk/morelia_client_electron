@@ -22,7 +22,17 @@ class Register_Pole extends Component {
             type: "vxod"
         }
     }
+
+    set_type(type: string){
+        this.setState({
+            type: type
+        })
+        console.log("change mode(reg and vxod window) to " + "type")
+    }
+
     render(){
+        var ChangeButton: JSX.Element;
+
         if (this.state.type == "vxod"){
             this.title = "Вход"
             this.knopka = <>
@@ -30,6 +40,9 @@ class Register_Pole extends Component {
                     Войти
                 </button>
             </>
+            ChangeButton = <button id="changeModeButton" onClick={() => this.set_type("reg")}>
+                Ещё не зарегистрированы?
+            </button>
 
         } else if (this.state.type == "reg"){
             this.title = "Регистрация"
@@ -38,6 +51,11 @@ class Register_Pole extends Component {
                     Зарегистрироваться
                 </button>
             </>
+
+            ChangeButton = <button id="changeModeButton" onClick={() => this.set_type("vxod")}>
+                Уже зарегистрированы?
+            </button>
+
         }
 
         this.input_and_button = () => {
@@ -52,6 +70,7 @@ class Register_Pole extends Component {
 
         return (
             <div id="RegVxodRoot">
+                { ChangeButton }
                 <div id={this.state.type}>
                     <h1 id="RegVxodLabel">{this.title}</h1>
                     {this.input_and_button()}
