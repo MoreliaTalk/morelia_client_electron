@@ -91,5 +91,14 @@ body {
             }
         }
 
+        #changeModeButton{
+            position: fixed;
+            right: 0px;
+            bottom: 0px;
+            margin: 10px;
+            @include button.BUTTON_styled_outlined(lighten(variables.$background_color, 70%));
+            padding: 10px;
+        }
+
     }
 }

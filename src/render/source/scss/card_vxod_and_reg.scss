@@ -5,6 +5,7 @@
 @mixin Card_V_A_R($type) {
     border-radius: 10px;
     width: 30vw;
+    transition: all 400ms ease;
 
     #RegVxodLabel{
         margin: 10px;
@@ -12,6 +13,7 @@
         background-color: variables.$background_color;
         border-radius: 10px;
         text-align: center;
+        transition: all 400ms ease;
     }
 
     #input_and_button{
@@ -26,6 +28,11 @@
 
         #knopkaRegVxod{
             height: 43px;
+            transition: all 400ms ease;
+        }
+
+        input{
+            transition: all 400ms ease;
         }
 
     }

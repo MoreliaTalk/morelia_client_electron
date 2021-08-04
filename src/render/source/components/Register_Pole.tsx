@@ -69,13 +69,15 @@ class Register_Pole extends Component {
         }
 
         return (
-            <div id="RegVxodRoot">
+            <>
                 { ChangeButton }
-                <div id={this.state.type}>
-                    <h1 id="RegVxodLabel">{this.title}</h1>
-                    {this.input_and_button()}
+                <div id="RegVxodRoot">
+                    <div id={this.state.type}>
+                        <h1 id="RegVxodLabel">{this.title}</h1>
+                        {this.input_and_button()}
+                    </div>
                 </div>
-            </div>
+            </>
         );
     }
 }
