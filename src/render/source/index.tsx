@@ -3,10 +3,11 @@ import { Component } from "react"
 import * as ReactDOM from "react-dom";
 import InputPole from "./components/InputPole";
 import MessagePole from "./components/MessagePole";
-import Com_server from "./server_communication/communication_main";
 import Register_Pole from "./components/Register_Pole";
 
 const { getGlobal } = require("electron").remote
+
+import Server_Com from "./server_communication/server_com";
 
 import "./scss/style.scss"
 
@@ -19,10 +20,10 @@ interface stateMain{
 }
 
 class Main extends Component{
-    server_com: Com_server;
     db: any;
     state: stateMain;
     data_render: JSX.Element;
+    server: Server_Com;
     constructor(props: {} | Readonly<{}>){
         super(props)
 
@@ -37,14 +38,12 @@ class Main extends Component{
             reg_or_login: false
         }
 
-        this.server_com = new Com_server()
-        this.server_com.connect("ws://localhost:8000/ws")
+        this.server = new Server_Com("ws://localhost:8000/ws")
         var db = getGlobal("db")
         this.db = new db()
         this.db.connect()
 
         this.send_mes = this.send_mes.bind(this)
-        this.reg_send = this.reg_send.bind(this)
     }
 
     send_mes(type: string, text: string){
@@ -58,15 +57,6 @@ class Main extends Component{
         )
     };
 
-    reg_send(login: string, password: string){
-        console.log("ss")
-        this.server_com.reg_user(login, password)
-        this.db.save_login_data(login, password)
-        this.setState({
-            reg_or_login: !this.state.reg_or_login,
-        })
-    }
-
     render(){
         if (this.db.is_login_data()) {
             this.data_render = 
@@ -76,7 +66,7 @@ class Main extends Component{
             </div>
         } else {
             this.data_render = <>
-                <Register_Pole reg_send={this.reg_send}/>
+                <Register_Pole reg_send={this.server.send_register_user}/>
             </>
         }
         return(

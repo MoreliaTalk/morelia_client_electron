@@ -20,3 +20,5 @@ class Validate{
         return main_object
     }
 }
+
+export default Validate;
