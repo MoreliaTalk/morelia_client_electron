@@ -11,9 +11,11 @@ class Validate{
             console.error("ERROR: The validator does not match the example")
         }
     }
+
     validate(data: {}){
         return validate_schema(data)
     }
+
     new_object(): MainType { 
         var main_object: MainType = {}
         validate_schema(main_object)
@@ -21,4 +23,4 @@ class Validate{
     }
 }
 
-export default Validate;
+export { Validate }

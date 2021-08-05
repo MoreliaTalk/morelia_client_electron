@@ -66,7 +66,7 @@ class Main extends Component{
             </div>
         } else {
             this.data_render = <>
-                <Register_Pole reg_send={this.server.send_register_user}/>
+                <Register_Pole send_auth={this.server.send_auth} send_register_user={this.server.send_register_user}/>
             </>
         }
         return(

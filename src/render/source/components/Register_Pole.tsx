@@ -2,11 +2,14 @@ import * as React from "react"
 import { Component } from "react"
 
 interface RegisterPoleProps {
-    reg_send: any
+    send_register_user: any
+    send_auth: any
 }
 
 interface RegisterPoleState {
     type: string
+    login: string
+    password: string
 }
 
 class Register_Pole extends Component {
@@ -19,7 +22,9 @@ class Register_Pole extends Component {
     constructor(props: {} | Readonly<{}>) {
         super(props)
         this.state = {
-            type: "vxod"
+            type: "vxod",
+            login: "",
+            password: "",
         }
     }
 
@@ -36,7 +41,10 @@ class Register_Pole extends Component {
         if (this.state.type == "vxod"){
             this.title = "Вход"
             this.knopka = <>
-                <button id="knopkaRegVxod">
+                <button id="knopkaRegVxod" onClick={() => this.props.send_auth(
+                    this.state.login,
+                    this.state.password
+                )}>
                     Войти
                 </button>
             </>
@@ -47,7 +55,10 @@ class Register_Pole extends Component {
         } else if (this.state.type == "reg"){
             this.title = "Регистрация"
             this.knopka = <>
-                <button id="knopkaRegVxod">
+                <button id="knopkaRegVxod" onClick={() => this.props.send_register_user(
+                    this.state.login,
+                    this.state.password
+                )}>
                     Зарегистрироваться
                 </button>
             </>
@@ -61,8 +72,16 @@ class Register_Pole extends Component {
         this.input_and_button = () => {
             return(
                 <div id="input_and_button">
-                    <input id="login" placeholder="Логин"></input>
-                    <input id="password" placeholder="Пароль"></input>
+                    <input id="login" placeholder="Логин" value={this.state.login}
+                    onChange={(event) => this.setState({
+                        login: event.target.value
+                    })}
+                    ></input>
+                    <input id="password" placeholder="Пароль" value={this.state.password}
+                    onChange={(event) => this.setState({
+                        password: event.target.value
+                    })}
+                    ></input>
                     { this.knopka }
                 </div>
             )
