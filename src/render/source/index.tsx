@@ -16,7 +16,8 @@ interface stateMain{
         type: string,
         text: string
     }[],
-    reg_or_login: boolean
+    reg_or_login: boolean,
+    reloaded: string
 }
 
 class Main extends Component{
@@ -35,15 +36,18 @@ class Main extends Component{
                     text: "Hello World)))"
                 }
             ],
-            reg_or_login: false
+            reg_or_login: false,
+            reloaded: "false"
         }
 
-        this.server = new Server_Com("ws://localhost:8000/ws")
         var db = getGlobal("db")
         this.db = new db()
         this.db.connect()
 
+        this.server = new Server_Com("ws://localhost:8000/ws", this.db, this.reload)
+
         this.send_mes = this.send_mes.bind(this)
+        this.reload = this.reload.bind(this)
     }
 
     send_mes(type: string, text: string){
@@ -56,6 +60,12 @@ class Main extends Component{
             }
         )
     };
+
+    reload(){
+        this.setState({
+            reloaded: this.state.reloaded+"true"
+        })
+    }
 
     render(){
         if (this.db.is_login_data()) {
