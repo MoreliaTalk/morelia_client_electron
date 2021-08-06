@@ -84,6 +84,8 @@ class Server_Com {
 
             if (response.type == "register_user"){
                 this.response_register_user(response)
+            } else if (response.type == "auth"){
+                this.response_auth(response)
             }
 
         } else {
@@ -92,16 +94,33 @@ class Server_Com {
     }
     
     response_register_user(response: MainType){
-        this.db.save_login_data(
-            this.temporary_storage.login,
-            this.temporary_storage.password
-        )
-        this.db.save_auth_data(
-            response.data.user[0].uuid,
-            response.data.user[0].auth_id
-        )
-        console.log("Успешная регистрация")
-        this.reload_main()
+        if (response.errors.code == 201){
+            this.db.save_login_data(
+                this.temporary_storage.login,
+                this.temporary_storage.password
+            )
+            this.db.save_auth_data(
+                response.data.user[0].uuid,
+                response.data.user[0].auth_id
+            )
+            console.log("Успешная регистрация")
+            this.reload_main()
+        }
+    }
+
+    response_auth(response: MainType){
+        if (response.errors.code == 200){
+            this.db.save_login_data(
+                this.temporary_storage.login,
+                this.temporary_storage.password
+            )
+            this.db.save_auth_data(
+                response.data.user[0].uuid,
+                response.data.user[0].auth_id
+            )
+            console.log("Успешный вход")
+            this.reload_main()
+        }
     }
 }
 
