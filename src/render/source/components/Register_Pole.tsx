@@ -32,7 +32,7 @@ class Register_Pole extends Component {
         this.setState({
             type: type
         })
-        console.log("change mode(reg and vxod window) to " + "type")
+        console.log("change mode(reg and vxod window) to " + type)
     }
 
     render(){

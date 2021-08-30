@@ -95,49 +95,78 @@ class Server_Com {
     }
     
     response_register_user(response: MainType){
-        if (response.errors.code == 201){
-            this.db.save_login_data(
-                this.temporary_storage.login,
-                this.temporary_storage.password
-            )
-            this.db.save_auth_data(
-                response.data.user[0].uuid,
-                response.data.user[0].auth_id
-            )
-            console.log("Успешная регистрация")
-            this.reload_main()
+        if (this.temporary_storage.login && this.temporary_storage.password){
+            if (response.errors.code == 201){
+                this.db.save_login_data(
+                    this.temporary_storage.login,
+                    this.temporary_storage.password
+                )
+                this.db.save_auth_data(
+                    response.data.user[0].uuid,
+                    response.data.user[0].auth_id
+                )
+                console.log("Успешная регистрация")
+                this.reload_main()
+            } else if (response.errors.code == 409){
+                Toastify({
+                    backgroundColor: "#ff2400",
+                    text: "Такой пользователь уже существует",
+                    gravity: "bottom",
+                    position: "left",
+                    duration: 1500
+                }).showToast()
+            }
+        } else {
+            Toastify({
+                backgroundColor: "#ff2400",
+                text: "Одно из полей пустое",
+                gravity: "bottom",
+                position: "left",
+                duration: 1500
+            }).showToast()
         }
     }
 
     response_auth(response: MainType){
-        if (response.errors.code == 200){
-            this.db.save_login_data(
-                this.temporary_storage.login,
-                this.temporary_storage.password
-            )
-            this.db.save_auth_data(
-                response.data.user[0].uuid,
-                response.data.user[0].auth_id
-            )
-            console.log("Успешный вход")
-            this.reload_main()
-        } else if (response.errors.code == 401){
+        if (this.temporary_storage.login && this.temporary_storage.password){
+            if (response.errors.code == 200){
+                this.db.save_login_data(
+                    this.temporary_storage.login,
+                    this.temporary_storage.password
+                )
+                this.db.save_auth_data(
+                    response.data.user[0].uuid,
+                    response.data.user[0].auth_id
+                )
+                console.log("Успешный вход")
+                this.reload_main()
+            } else if (response.errors.code == 401){
+                Toastify({
+                    backgroundColor: "#ff2400",
+                    text: "Неверный пароль",
+                    gravity: "bottom",
+                    position: "left",
+                    duration: 1500
+                }).showToast()
+            } else if (response.errors.code == 404){
+                Toastify({
+                    backgroundColor: "rgb(150, 201, 61)",
+                    text: "Пожалуйста, зарегистрирутесь!",
+                    gravity: "bottom",
+                    position: "left",
+                    duration: 1500
+                }).showToast()
+            }
+        } else {
             Toastify({
                 backgroundColor: "#ff2400",
-                text: "Неверный пароль",
-                gravity: "bottom",
-                position: "left",
-                duration: 1500
-            }).showToast()
-        } else if (response.errors.code == 404){
-            Toastify({
-                backgroundColor: "rgb(150, 201, 61)",
-                text: "Пожалуйста, зарегистрирутесь!",
+                text: "Одно из полей пустое",
                 gravity: "bottom",
                 position: "left",
                 duration: 1500
             }).showToast()
         }
+
     }
 }
 
