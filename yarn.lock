@@ -193,6 +193,11 @@
   resolved "https://registry.yarnpkg.com/@types/strip-json-comments/-/strip-json-comments-0.0.30.tgz#9aa30c04db212a9a0649d6ae6fd50accc40748a1"
   integrity sha512-7NQmHra/JILCd1QqpSzl8+mJRc8ZHz3uDm8YV1Ks9IhK0epEiTw8aIErbvH9PI+6XbqhyIQy3462nEsn7UVzjQ==
 
+"@types/toastify-js@^1.9.2":
+  version "1.9.2"
+  resolved "https://registry.yarnpkg.com/@types/toastify-js/-/toastify-js-1.9.2.tgz#de9ea5212f6adb73919a5dcc33158f30881d8c35"
+  integrity sha512-lIbjnaArz56dM++EsrMnt9OK9RSIMAcJGz2sfpuoblLeqYYzyvyDaJu306++K9CtvWWlmj5HXG5CnuqYJKxDbg==
+
 "@types/yauzl@^2.9.1":
   version "2.9.2"
   resolved "https://registry.yarnpkg.com/@types/yauzl/-/yauzl-2.9.2.tgz#c48e5d56aff1444409e39fa164b0b4d4552a7b7a"
@@ -2712,6 +2717,11 @@ to-regex-range@^5.0.1:
   integrity sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==
   dependencies:
     is-number "^7.0.0"
+
+toastify-js@^1.11.1:
+  version "1.11.1"
+  resolved "https://registry.yarnpkg.com/toastify-js/-/toastify-js-1.11.1.tgz#023a4ce64ecdead1d6d170072b62bd345088c427"
+  integrity sha512-O1UR06KEhFY9Vu2iKltgOE62+Vq/5iU7AOktouFkEegEisrqtNhEri9RpSd6u6wyPsd4Ae9RT1io3uwkMAlLVQ==
 
 tree-kill@^1.2.2:
   version "1.2.2"

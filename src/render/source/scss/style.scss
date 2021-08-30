@@ -9,6 +9,13 @@
     src: url("../fonts/Roboto-Regular.ttf");
 }
 
+.toastify {
+    box-shadow: none;
+    border-radius: 10px;
+    color: variables.$background_color;
+    font-weight: bold;
+}
+
 body {
     margin: 0;
     font-family: RobotoRegular;

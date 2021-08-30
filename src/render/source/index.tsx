@@ -9,6 +9,7 @@ const { getGlobal } = require("electron").remote
 
 import Server_Com from "./server_communication/server_com";
 
+import "toastify-js/src/toastify.css"
 import "./scss/style.scss"
 
 interface stateMain{

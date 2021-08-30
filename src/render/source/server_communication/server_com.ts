@@ -1,5 +1,6 @@
 import { Validate } from "./api"
 import MainType from "./scemasType/main";
+import * as Toastify from "toastify-js"
 
 interface Server_ComDB{
     save_login_data: (login: string, password: string) => void
@@ -120,6 +121,22 @@ class Server_Com {
             )
             console.log("Успешный вход")
             this.reload_main()
+        } else if (response.errors.code == 401){
+            Toastify({
+                backgroundColor: "#ff2400",
+                text: "Неверный пароль",
+                gravity: "bottom",
+                position: "left",
+                duration: 1500
+            }).showToast()
+        } else if (response.errors.code == 404){
+            Toastify({
+                backgroundColor: "rgb(150, 201, 61)",
+                text: "Пожалуйста, зарегистрирутесь!",
+                gravity: "bottom",
+                position: "left",
+                duration: 1500
+            }).showToast()
         }
     }
 }
