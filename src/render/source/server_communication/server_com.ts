@@ -96,18 +96,21 @@ class Server_Com {
     
     response_register_user(response: MainType){
         if (this.temporary_storage.login && this.temporary_storage.password){
-            if (response.errors.code == 201){
-                this.db.save_login_data(
-                    this.temporary_storage.login,
-                    this.temporary_storage.password
-                )
-                this.db.save_auth_data(
-                    response.data.user[0].uuid,
-                    response.data.user[0].auth_id
-                )
-                console.log("Успешная регистрация")
-                this.reload_main()
-            } else if (response.errors.code == 409){
+            if (response.errors?.code == 201){
+                if (response.data?.user && response.data?.user[0].uuid && response.data?.user[0].auth_id){
+                    this.db.save_login_data(
+                        this.temporary_storage.login,
+                        this.temporary_storage.password
+                    )
+                    this.db.save_auth_data(
+                        response.data?.user[0].uuid,
+                        response.data?.user[0].auth_id
+                    )
+                    console.log("Успешная регистрация")
+                    this.reload_main()
+                }
+
+            } else if (response.errors?.code == 409){
                 Toastify({
                     backgroundColor: "#ff2400",
                     text: "Такой пользователь уже существует",
@@ -129,18 +132,20 @@ class Server_Com {
 
     response_auth(response: MainType){
         if (this.temporary_storage.login && this.temporary_storage.password){
-            if (response.errors.code == 200){
-                this.db.save_login_data(
-                    this.temporary_storage.login,
-                    this.temporary_storage.password
-                )
-                this.db.save_auth_data(
-                    response.data.user[0].uuid,
-                    response.data.user[0].auth_id
-                )
-                console.log("Успешный вход")
-                this.reload_main()
-            } else if (response.errors.code == 401){
+            if (response.errors?.code == 200){
+                if (response.data?.user && response.data?.user[0].uuid && response.data?.user[0].auth_id){
+                    this.db.save_login_data(
+                        this.temporary_storage.login,
+                        this.temporary_storage.password
+                    )
+                    this.db.save_auth_data(
+                        response.data.user[0].uuid,
+                        response.data.user[0].auth_id
+                    )
+                    console.log("Успешный вход")
+                    this.reload_main()
+                }
+            } else if (response.errors?.code == 401){
                 Toastify({
                     backgroundColor: "#ff2400",
                     text: "Неверный пароль",
@@ -148,7 +153,7 @@ class Server_Com {
                     position: "left",
                     duration: 1500
                 }).showToast()
-            } else if (response.errors.code == 404){
+            } else if (response.errors?.code == 404){
                 Toastify({
                     backgroundColor: "rgb(150, 201, 61)",
                     text: "Пожалуйста, зарегистрирутесь!",

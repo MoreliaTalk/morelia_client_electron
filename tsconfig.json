@@ -3,6 +3,8 @@
       "outDir": "./src/render/dist",
 
       "alwaysStrict": true,
+      "strictNullChecks": true,
+
       "noImplicitAny": true,
 
       "module": "commonJS",

@@ -36,7 +36,7 @@ class Register_Pole extends Component {
     }
 
     render(){
-        var ChangeButton: JSX.Element;
+        var ChangeButton: JSX.Element = <></>
 
         if (this.state.type == "vxod"){
             this.title = "Вход"
