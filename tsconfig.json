@@ -7,8 +7,8 @@
       "strictBindCallApply": true,
       "strictFunctionTypes": true,
       "strictPropertyInitialization": true,
-
       "noImplicitAny": true,
+      "noImplicitThis": true,
 
       "module": "commonJS",
       "target": "es5",
