@@ -7,7 +7,7 @@ interface MessageProps{
 
 class My_message extends Component{
     text: string;
-    props: MessageProps;
+    props!: MessageProps;
     constructor(props: {} | Readonly<{}>){
         super(props)
         this.text = this.props.text 
@@ -24,7 +24,7 @@ class My_message extends Component{
 
 class Other_message extends Component{
     text: string;
-    props: MessageProps;
+    props!: MessageProps;
     constructor(props: {} | Readonly<{}>){
         super(props)
         this.text = this.props.text

@@ -13,12 +13,9 @@ interface RegisterPoleState {
 }
 
 class Register_Pole extends Component {
-    props: RegisterPoleProps;
+    props!: RegisterPoleProps;
     state: RegisterPoleState;
     title: string;
-    input_and_button: () => JSX.Element;
-    knopka: JSX.Element;
-
     constructor(props: {} | Readonly<{}>) {
         super(props)
         this.state = {
@@ -26,6 +23,7 @@ class Register_Pole extends Component {
             login: "",
             password: "",
         }
+        this.title = ""
     }
 
     set_type(type: string){
@@ -37,10 +35,12 @@ class Register_Pole extends Component {
 
     render(){
         var ChangeButton: JSX.Element = <></>
+        var input_and_button: () => JSX.Element;
+        var knopka: JSX.Element;
 
         if (this.state.type == "vxod"){
             this.title = "Вход"
-            this.knopka = <>
+            knopka = <>
                 <button id="knopkaRegVxod" onClick={() => this.props.send_auth(
                     this.state.login,
                     this.state.password
@@ -54,7 +54,7 @@ class Register_Pole extends Component {
 
         } else if (this.state.type == "reg"){
             this.title = "Регистрация"
-            this.knopka = <>
+            knopka = <>
                 <button id="knopkaRegVxod" onClick={() => this.props.send_register_user(
                     this.state.login,
                     this.state.password
@@ -69,7 +69,7 @@ class Register_Pole extends Component {
 
         }
 
-        this.input_and_button = () => {
+        input_and_button = () => {
             return(
                 <div id="input_and_button">
                     <input id="login" placeholder="Логин" value={this.state.login}
@@ -82,7 +82,7 @@ class Register_Pole extends Component {
                         password: event.target.value
                     })}
                     ></input>
-                    { this.knopka }
+                    { knopka }
                 </div>
             )
         }
@@ -93,7 +93,7 @@ class Register_Pole extends Component {
                 <div id="RegVxodRoot">
                     <div id={this.state.type}>
                         <h1 id="RegVxodLabel">{this.title}</h1>
-                        {this.input_and_button()}
+                        {input_and_button()}
                     </div>
                 </div>
             </>

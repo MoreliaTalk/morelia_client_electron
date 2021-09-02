@@ -23,7 +23,6 @@ interface stateMain{
 class Main extends Component{
     db: any;
     state: stateMain;
-    data_render: JSX.Element;
     server: Server_Com;
     constructor(props: {} | Readonly<{}>){
         super(props)
@@ -68,20 +67,21 @@ class Main extends Component{
     }
 
     render(){
+        var data_render: JSX.Element;
         if (this.db.is_login_data()) {
-            this.data_render = 
+            data_render = 
             <div id = "Main_root">
                 <MessagePole data={this.state.massiv_mes}/>
                 <InputPole send_method={this.send_mes}/>
             </div>
         } else {
-            this.data_render = <>
+            data_render = <>
                 <Register_Pole send_auth={this.server.send_auth} send_register_user={this.server.send_register_user}/>
             </>
         }
         return(
             <>
-                {this.data_render}
+                {data_render}
             </>
         )
     }

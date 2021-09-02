@@ -10,10 +10,11 @@ interface MessagePoleProps{
 }
 
 class MessagePole extends Component{
-    props: MessagePoleProps;
-    massiv_mes: any[];
+    props!: MessagePoleProps;
+    massiv_mes: JSX.Element[]; 
     constructor(props: {} | Readonly<{}>){
         super(props)
+        this.massiv_mes = []
     }
 
     render(){

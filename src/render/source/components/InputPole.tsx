@@ -10,10 +10,9 @@ interface InputPoleState{
 }
 
 class InputPole extends Component {
-    props: InputPoleProps;
-    timerID: NodeJS.Timeout;
+    props!: InputPoleProps;
     state: InputPoleState;
-    constructor(props: {} | Readonly<{}>){
+    constructor(props: InputPoleProps | Readonly<{}>){
         super(props)
         this.state = {add_height: 19}
         this.send = this.send.bind(this);
@@ -24,7 +23,6 @@ class InputPole extends Component {
     }
 
     render() {
-        //TODO Заменить простые компоненты на более эстетичные
         return (
                 <div id="forma_input">
                     <textarea id="text_input" placeholder = "Введите текст сообщения:"/>
