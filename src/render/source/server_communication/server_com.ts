@@ -32,8 +32,22 @@ class Server_Com {
         this.ws.onopen = () => {
             console.log("Websocket is connect")
         }
+
         this.ws.onmessage = (event) => {
             this.responseMessage(event)
+        }
+
+        this.ws.onclose = (event) => {
+            if (!event.wasClean && event.code == 1006){
+                // TODO: Заменить блокирующим меню с предложением сменить сервер
+                Toastify({
+                    backgroundColor: "#ff2400",
+                    text: "Невозможно установить \n соединение с сервером",
+                    gravity: "bottom",
+                    position: "left",
+                    duration: 1500
+                }).showToast()
+            }
         }
 
         this.apiValidate = new Validate()
