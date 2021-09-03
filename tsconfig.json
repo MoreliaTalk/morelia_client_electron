@@ -9,6 +9,7 @@
       "strictPropertyInitialization": true,
       "noImplicitAny": true,
       "noImplicitThis": true,
+      "useUnknownInCatchVariables": true,
 
       "module": "commonJS",
       "target": "es5",
