@@ -61,13 +61,13 @@ class Main extends Component{
         this.db = new db()
         this.db.connect()
 
-        this.send_mes = this.send_mes.bind(this)
+        this.add_message_to_MessagePole = this.add_message_to_MessagePole.bind(this)
         this.reload = this.reload.bind(this)
 
         this.server = new Server_Com("ws://localhost:8000/ws", this.db, this.reload)
     }
 
-    send_mes(type: string, text: string){
+    add_message_to_MessagePole(type: string, text: string){
         this.setState(
             {
                 massiv_mes: this.state.massiv_mes.concat({
@@ -91,7 +91,7 @@ class Main extends Component{
             data_render = 
             <div id = "Main_root">
                 <MessagePole data={this.state.massiv_mes}/>
-                <InputPole send_method={this.send_mes}/>
+                <InputPole send_method={this.add_message_to_MessagePole}/>
             </div>
         } else {
             data_render = <>
