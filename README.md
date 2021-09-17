@@ -11,7 +11,7 @@
 
 ## Установка готового приложения на компьютер
 
-Windows: Зайти во вкладку релизов, скачать архив **morelia_client_electron-win32-x64.zip**
+Windows: Зайти во вкладку релизов, скачать архив **morelia_client_electron-win32-x64.zip**, распаковать, запустить .exe файл
 
 MacOS: Скоро
 
@@ -71,4 +71,3 @@ yarn start_no_pack
 ``` cmd
 yarn dev
 ```
-
